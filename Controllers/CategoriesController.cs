@@ -27,6 +27,12 @@ namespace MyFoodStore.Controllers
 
         public IActionResult Browse(string category)
         {
+            //ensure we have a category
+            if (category == null)
+            {
+                return RedirectToAction("Index");
+            }
+
             //store the input parameter inside the ViewBag
             ViewBag.category = category;
 
